@@ -1,0 +1,5 @@
+Forms and controlled components
+Routing with React Router
+Global state management with Context API or Redux
+Fetching data from an API using useEffect and displaying it
+Creating a more complex application that combines these concepts
