@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Greeting from "./components/Greeting";
+import TodoList from "./components/TodoList";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const todoItems = ["Buy milk", "Clean the kitchen", "Make dinner"];
+
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  }, [count]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Greeting name="React Developer" />
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <TodoList items={todoItems} />
     </div>
   );
 }
